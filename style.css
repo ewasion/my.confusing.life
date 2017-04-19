@@ -7,10 +7,10 @@ src: url('Baksheesh-Regular.ttf');
 .quote
 {
 font-family: 'Baksheesh';
-font-size:30px;
-padding-bottom: 5px;
+font-size:35px;
+padding-top: 10px;
+padding-bottom: 10px;
 color: #090347;
-border-bottom: 3px solid #090347;
 height: 100%;
 width: 100%;
 display: flex;
@@ -30,7 +30,8 @@ content: '';
 height: 3px;
 background: #090347; 
 display:block;
-margin-top: 2px;
+margin-top: 4px;
+margin-bottom: 4px;
 -webkit-animation: fadein 0.3s;
 -moz-animation: fadein 0.3s;
 -ms-animation: fadein 0.3s;
