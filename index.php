@@ -6,6 +6,7 @@ $base_url = "http://" . $_SERVER['SERVER_NAME'] . "/";
 if (empty($_GET)) {
 $rand_line = $f_contents[$rand_line_number - 1];
 $rand_line = trim(preg_replace('/\s\s+/', ' ', $rand_line));
+$rand_line = preg_replace('/\s+/', ' ', $rand_line);
 }
 
 else {
@@ -17,6 +18,7 @@ if ($_GET['quote'] == "0" || $_GET['quote'] == "00" || $_GET['quote'] == "000") 
 $line = (int)$_GET['quote'];
 $rand_line = $f_contents[$line - 1];
 $rand_line = trim(preg_replace('/\s\s+/', ' ', $rand_line));
+$rand_line = preg_replace('/\s+/', ' ', $rand_line);
 $rand_line_number = $line;
 }
 }
@@ -27,9 +29,9 @@ $rand_line_number = $line;
 <script src="https://cdn.rawgit.com/zenorocha/clipboard.js/v1.6.0/dist/clipboard.min.js"></script>
 
 <div class="quote">
-	"<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;
+	<div class="noselect">"<br /><br /></div>
 	<div onclick="location.href='<?php echo $base_url;?>';"><?php echo $rand_line;?></div>
-	<br /><br /><br />&nbsp;&nbsp;&nbsp;"
+	<div class="noselect"><br /><br />"</div>
 </div>
 
 <div class="footer">
