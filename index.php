@@ -7,11 +7,9 @@ if (empty($_GET)) {
 $rand_line = $f_contents[$rand_line_number - 1];
 $rand_line = trim(preg_replace('/\s\s+/', ' ', $rand_line));
 $rand_line = preg_replace('/\s+/', ' ', $rand_line);
-}
+} else {
 
-else {
-
-if ($_GET['quote'] == "0" || $_GET['quote'] == "00" || $_GET['quote'] == "000") {
+if ($_GET['quote'] < 1 || $_GET['quote'] > count($f_contents)) {
 	header("Location: $base_url");
 } else {
 
