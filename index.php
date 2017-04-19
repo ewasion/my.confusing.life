@@ -10,7 +10,7 @@ $rand_line = trim(preg_replace('/\s\s+/', ' ', $rand_line));
 
 else {
 
-if ($_GET['quote'] == "0" || $_GET['quote'] == "00") {
+if ($_GET['quote'] == "0" || $_GET['quote'] == "00" || $_GET['quote'] == "000") {
 	header("Location: $base_url");
 } else {
 
