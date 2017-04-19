@@ -27,7 +27,7 @@ $rand_line_number = $line;
 <script src="https://cdn.rawgit.com/zenorocha/clipboard.js/v1.6.0/dist/clipboard.min.js"></script>
 
 <div class="quote">
-	"<br /><br />&nbsp;&nbsp;&nbsp;
+	"<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;
 	<div onclick="location.href='<?php echo $base_url;?>';"><?php echo $rand_line;?></div>
 	<br /><br /><br />&nbsp;&nbsp;&nbsp;"
 </div>
