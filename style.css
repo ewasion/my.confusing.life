@@ -1,3 +1,11 @@
+* {
+cursor: default;
+}
+
+*:focus {
+    outline: none;
+}
+
 @font-face
 {
 font-family: Baksheesh;
@@ -17,7 +25,6 @@ display: flex;
 position: fixed;
 align-items: center;
 justify-content: center;
-cursor: default;
 -webkit-animation: fadein 0.3s;
 -moz-animation: fadein 0.3s;
 -ms-animation: fadein 0.3s;
@@ -94,4 +101,13 @@ to   { opacity: 1; }
 @-o-keyframes fadein {
 from { opacity: 0; }
 to   { opacity: 1; }
+}
+
+::selection {
+background: #090347;
+color: #ffffff;
+}
+::-moz-selection {
+background: #090347;
+color: #ffffff;
 }
