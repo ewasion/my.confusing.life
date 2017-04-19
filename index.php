@@ -1,6 +1,6 @@
 <?php
 $f_contents = file("flatfile.txt");
-$rand_line_number = rand(0, count($f_contents) - 1);
+$rand_line_number = rand(1, count($f_contents) - 1);
 $base_url = "http://" . $_SERVER['SERVER_NAME'] . "/";
 
 if (empty($_GET)) {
@@ -10,7 +10,7 @@ $rand_line = trim(preg_replace('/\s\s+/', ' ', $rand_line));
 
 else {
 
-if ($_GET['quote'] == "0") {
+if ($_GET['quote'] == "0" || $_GET['quote'] == "00") {
 	header("Location: $base_url");
 } else {
 
