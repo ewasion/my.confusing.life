@@ -1,5 +1,5 @@
 <?php
-$f_contents = file("flatfile.txt");
+$f_contents = file("src/flatfile.txt");
 $rand_line_number = rand(1, count($f_contents) - 1);
 $base_url = "http://" . $_SERVER['SERVER_NAME'] . "/";
 
@@ -22,17 +22,21 @@ $rand_line_number = $line;
 }
 ?>
 <title><?php echo $rand_line;?></title>
-<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="src/style.css" media="screen" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.rawgit.com/zenorocha/clipboard.js/v1.6.0/dist/clipboard.min.js"></script>
 
 <div class="quote">
 	<div class="noselect">"<br /><br /></div>
-	<div onclick="location.href='<?php echo $base_url;?>';"><?php echo $rand_line;?></div>
+	<div onclick="location.href='<?php echo $base_url;?>';"><span><?php echo $rand_line;?></span></div>
 	<div class="noselect"><br /><br />"</div>
 </div>
 
-<div class="footer">
+<div class="footer-left">
+Developed by <a href="http://instagram.com/danny.void">DannyVoid</a>.
+</div>
+
+<div class="footer-right">
 <input class="link" id="quote" type="text" value="<?php echo $base_url . "?quote=" . $rand_line_number;?>">
 <button class="btn" data-clipboard-action="copy" data-clipboard-target="#quote">Copy</button>
 </div>
@@ -42,8 +46,12 @@ var clipboard = new Clipboard('.btn');
 clipboard.on('success', function(e) {
 	console.log(e);
 });
-
 clipboard.on('error', function(e) {
 	console.log(e);
 });
+window.history.pushState("<?php echo $rand_line;?>", "<?php echo $rand_line;?>", "<?php echo "?quote=" . $rand_line_number;?>");
+window.onpopstate = function (e) {
+  var id = e.state.id;
+  load_item(id);
+};
 </script>

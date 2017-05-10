@@ -3,7 +3,7 @@ cursor: default;
 }
 
 *:focus {
-    outline: none;
+outline: none;
 }
 
 @font-face
@@ -31,7 +31,19 @@ justify-content: center;
 animation: fadein 0.3s;
 }
 
-.footer {
+.footer-left {
+position: fixed;
+bottom: 0;
+left: 0;
+font-family: 'Baksheesh';
+padding: 10px;
+font-family: 'Baksheesh';
+font-size : 12px;
+color : #090347;
+background-color : #ffffff;
+}
+
+.footer-right {
 position: fixed;
 bottom: 0;
 right: 0;
@@ -61,6 +73,10 @@ color : #090347;
 padding : 2px;
 background-color : #ffffff;
 text-align: center;
+}
+
+a, a:hover, a:visited {
+color: #090347;
 }
 
 @keyframes fadein {
