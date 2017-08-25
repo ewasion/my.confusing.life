@@ -2,6 +2,7 @@
 $f_contents = file("src/flatfile.txt");
 $rand_line_number = rand(1, count($f_contents) - 1);
 $base_url = "http://" . $_SERVER['SERVER_NAME'] . "/";
+$base_url = substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], '/') + 1);
 
 if (empty($_GET)) {
 $rand_line = $f_contents[$rand_line_number - 1];
