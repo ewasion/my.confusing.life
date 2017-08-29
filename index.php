@@ -34,11 +34,11 @@ if (empty($_GET)) {
 </div>
 
 <div class="footer-left">
-Developed by <a href="https://instagram.com/danny.void">DannyVoid</a>. Forked by <a href="https://github.com/ewasion">Evasion</a>.
+Developed by <a href="https://instagram.com/danny.void">DannyVoid</a>.
 </div>
 
 <div class="footer-right">
-<input class="link" id="quote" type="text" value="<?php echo $base_url . '?' . $rand_line_number;?>">
+<input class="link" id="quote" type="text" value="<?php echo (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]" . $base_url . '?' . $rand_line_number;?>">
 <button class="btn" data-clipboard-action="copy" data-clipboard-target="#quote">Copy</button>
 </div>
 
